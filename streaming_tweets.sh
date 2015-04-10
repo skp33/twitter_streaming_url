@@ -26,6 +26,6 @@ echo "${oauth_signature}"
 header="Authorization: OAuth oauth_consumer_key=\"${consumer_key}\", oauth_nonce=\"${nonce}\", oauth_signature=\"${oauth_signature}\", oauth_signature_method=\"HMAC-SHA1\", oauth_timestamp=\"${timestamp}\", oauth_token=\"${oauth_token}\", oauth_version=\"1.0\""
 
 
-result=`curl --get 'https://stream.twitter.com/1.1/statuses/filter.json' --data "track=${filters}" --header "${header}" --verbose | nc -lk 9999`
+result=`curl --get 'https://stream.twitter.com/1.1/statuses/filter.json' --data "track=${filters}" --header "${header}" --verbose`
 
 echo "${result}"
